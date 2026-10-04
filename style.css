@@ -1798,9 +1798,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-05.светлый .стрелка--тут { background: var(--цвет-акцент); color: var(--цвет-на-акценте); border-color: var(--цвет-акцент); }
   #экран-05.тёмный .стрелка--тут { background: var(--цвет-тёплый); color: var(--цвет-тёмный-фон); border-color: var(--цвет-тёплый); }
   #экран-05.тёмный .стрелка { background: transparent; color: var(--цвет-тёмный-текст); border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 30%, transparent); }
-  #экран-05 .мокап img { width: auto; max-width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; mix-blend-mode: multiply; }
+  #экран-05 .мокап img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; mix-blend-mode: multiply; }
   @media (min-width: 900px) {
-    #экран-05 .мокап img { width: 100%; }
     #экран-05 .кадр { padding: 32px 32px 16px; }
   }
   #экран-05 .кадр:first-child img { aspect-ratio: 672 / 246; }
