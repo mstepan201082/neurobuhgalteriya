@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Черновик: три варианта прокрутки скриншотов</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #F7F5F1; color: #2B2E33; font: 17px/1.5 'PT Sans', system-ui, sans-serif; }
+  main { width: min(100% - 32px, 900px); margin: 0 auto; padding: 28px 0 80px; }
+  h1 { font-size: 26px; line-height: 1.2; margin: 0 0 8px; }
+  h2 { font-size: 22px; line-height: 1.25; margin: 44px 0 6px; color: #1B2A4A; }
+  .как { margin: 0 0 16px; color: #5A5D63; }
+  .окно { margin: 0; position: relative; padding-top: 24px; border-radius: 18px; overflow: hidden; background: #F7F5F1;
+    border: 1px solid #E2E0DA; box-shadow: 0 12px 34px rgba(43, 46, 51, .06); }
+  .окно::before { content: ""; position: absolute; inset: 0 0 auto; height: 24px; background: #E9E7E2; border-bottom: 1px solid #E2E0DA; }
+  .окно::after { content: ""; position: absolute; top: 8px; left: 12px; width: 8px; height: 8px; border-radius: 50%; background: #1B2A4A;
+    box-shadow: 14px 0 0 rgba(27, 42, 74, .55), 28px 0 0 rgba(27, 42, 74, .3); }
+  .окно img { display: block; height: auto; mix-blend-mode: multiply; }
+  .окно figcaption { padding: 10px 20px 18px; font-size: 14px; color: #5A5D63; }
+  .окно + .окно { margin-top: 16px; }
+
+  /* 1 · листать между двумя */
+  .лента { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .лента::-webkit-scrollbar { display: none; }
+  .кадр { flex: 0 0 100%; scroll-snap-align: start; display: grid; place-items: center; padding: 24px 20px 8px; min-height: 290px; }
+  .кадр img { max-width: 100%; }
+  @media (max-width: 899px) { .кадр { min-height: 0; padding: 16px 12px 4px; } }
+  .пульт { display: flex; align-items: center; justify-content: center; gap: 14px; padding: 6px 20px 2px; }
+  .пульт button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid #E2E0DA; background: #F7F5F1; color: #1B2A4A;
+    font: 700 22px/1 'PT Sans', sans-serif; cursor: pointer; }
+  .пульт button:disabled { opacity: .35; cursor: default; }
+  .пульт span { min-width: 5.5em; text-align: center; font-weight: 700; color: #1B2A4A; }
+
+  /* 2 · оба друг под другом, на узком экране каждый листается вбок */
+  .вбок { overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 20px 20px 6px; }
+  .вбок img { max-width: 100%; }
+  @media (max-width: 899px) { .вбок img { max-width: none; } .вбок .запрос { width: 560px; } .вбок .ответ { width: 800px; } }
+
+  /* 3 · окно как чат: листается вверх-вниз */
+  .чат { height: 250px; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 20px 20px 8px; display: grid; gap: 20px; align-content: start; }
+  .чат img { max-width: 100%; }
+  .чат .запрос { justify-self: end; }
+  @media (max-width: 899px) { .чат { height: 170px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Черновик: три варианта прокрутки скриншотов</h1>
+  <p class="как">Это проба для выбора, не часть сайта. Попробуйте каждый вариант и на компьютере, и на телефоне.</p>
+
+  <h2>Вариант 1 · Листать между двумя</h2>
+  <p class="как">В окне один скриншот. На телефоне проведите пальцем вбок, на компьютере нажмите стрелку — появится второй.</p>
+  <figure class="окно">
+    <div class="лента" id="лента">
+      <div class="кадр"><img src="img/skrin-zapros.webp" width="672" height="246" alt="Скриншот запроса к ChatGPT"></div>
+      <div class="кадр"><img src="img/skrin-otvet.webp" width="948" height="187" alt="Скриншот ответа ChatGPT"></div>
+    </div>
+    <div class="пульт">
+      <button type="button" id="назад" aria-label="Предыдущий скриншот" disabled>‹</button>
+      <span id="счёт">Запрос</span>
+      <button type="button" id="вперёд" aria-label="Следующий скриншот">›</button>
+    </div>
+    <figcaption>Скриншот моей переписки с ChatGPT, обезличено</figcaption>
+  </figure>
+
+  <h2>Вариант 2 · Оба друг под другом</h2>
+  <p class="как">Два скриншота в двух рамках, оба видны сразу. На компьютере помещаются целиком. На телефоне каждый листается пальцем вбок внутри своей рамки, буквы обычного размера.</p>
+  <figure class="окно">
+    <div class="вбок"><img class="запрос" src="img/skrin-zapros.webp" width="672" height="246" alt="Скриншот запроса к ChatGPT"></div>
+  </figure>
+  <figure class="окно">
+    <div class="вбок"><img class="ответ" src="img/skrin-otvet.webp" width="948" height="187" alt="Скриншот ответа ChatGPT"></div>
+    <figcaption>Скриншот моей переписки с ChatGPT, обезличено</figcaption>
+  </figure>
+
+  <h2>Вариант 3 · Окно как чат</h2>
+  <p class="как">Одно невысокое окно: сверху запрос, ниже ответ. Листается внутри окна вверх-вниз — колесом мыши или пальцем.</p>
+  <figure class="окно">
+    <div class="чат">
+      <img class="запрос" src="img/skrin-zapros.webp" width="672" height="246" alt="Скриншот запроса к ChatGPT">
+      <img class="ответ" src="img/skrin-otvet.webp" width="948" height="187" alt="Скриншот ответа ChatGPT">
+    </div>
+    <figcaption>Скриншот моей переписки с ChatGPT, обезличено</figcaption>
+  </figure>
+</main>
+<script>
+  (function () {
+    var лента = document.getElementById('лента'), назад = document.getElementById('назад'),
+        вперёд = document.getElementById('вперёд'), счёт = document.getElementById('счёт');
+    function обновить() {
+      var второй = лента.scrollLeft > лента.clientWidth / 2;
+      назад.disabled = !второй; вперёд.disabled = второй; счёт.textContent = второй ? 'Ответ ИИ' : 'Запрос';
+    }
+    назад.onclick = function () { лента.scrollTo({ left: 0 }); };
+    вперёд.onclick = function () { лента.scrollTo({ left: лента.scrollWidth }); };
+    лента.addEventListener('scroll', обновить);
+  })();
+</script>
+</body>
+</html>
