@@ -1667,3 +1667,29 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 
   body.панель-с-переходом .липкая-кнопка { transition: none; }
 }
+
+/* экран 02 */
+#экран-02 .блок__внутри { width: min(100% - 2 * var(--отступ-блока), 1320px); }
+  #экран-02 .секция__шапка, #экран-02 .секция__шапка h2 { max-width: none; }
+  #экран-02 .секция__лид { max-width: 860px; }
+  #экран-02 .пара { display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; align-items: stretch; }
+  #экран-02 .роль { padding: 40px 44px 44px; }
+  #экран-02 .роль b { font-size: var(--кегль-цифра); line-height: 1.2; letter-spacing: -.01em; margin-bottom: 12px; }
+  #экран-02 .роль p { font-size: var(--кегль-лид); line-height: 1.5; }
+  #экран-02 .беды { list-style: none; margin: 26px 0 0; padding: 26px 0 0; display: grid; gap: 16px; align-content: start; border-top: 1px solid var(--цвет-линия); }
+  #экран-02 .беды li { position: relative; padding-left: 26px; font-size: var(--кегль-лид); line-height: 1.5; }
+  #экран-02 .беды li::before { content: ""; position: absolute; left: 0; top: .55em; width: 9px; height: 9px; border-radius: 50%; }
+  #экран-02.светлый .беды li { color: var(--цвет-текст); }
+  #экран-02.светлый .беды li::before { background: var(--цвет-акцент-яркий); }
+  #экран-02.тёмный .беды { border-top-color: color-mix(in srgb, var(--цвет-тёмный-текст) 18%, transparent); }
+  #экран-02.тёмный .беды li { color: var(--цвет-тёмный-текст); }
+  #экран-02.тёмный .беды li::before { background: var(--цвет-тёплый); }
+  @media (min-width: 900px) and (max-width: 1279px) { #экран-02 .роль p { min-height: 3em; } }
+  @media (max-width: 899px) {
+    #экран-02 .пара { grid-template-columns: 1fr; row-gap: 16px; }
+    #экран-02 .роль { padding: 24px 20px 26px; }
+    #экран-02 .беды { margin-top: 20px; padding-top: 20px; gap: 12px; }
+    #экран-02 .беды li { padding-left: 22px; font-size: var(--кегль-текст); }
+    #экран-02 .роль p { font-size: var(--кегль-текст); }
+    #экран-02 .роль b { font-size: var(--кегль-лид); line-height: 1.3; margin-bottom: 8px; }
+  }
