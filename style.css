@@ -1782,7 +1782,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-05 .счёт b { display: block; font-weight: 700; font-size: var(--кегль-h2); line-height: 1.1; letter-spacing: -.02em; margin-bottom: 8px; }
   #экран-05 .счёт span { display: block; font-size: var(--кегль-лид); line-height: 1.45; }
   #экран-05 .доказательство { display: grid; grid-template-columns: 1.9fr 1fr; gap: 28px; align-items: stretch; }
-  #экран-05 .мокап { border-radius: var(--радиус-карточки); box-shadow: var(--тень); }
+  #экран-05 .мокап { min-width: 0; border-radius: var(--радиус-карточки); box-shadow: var(--тень); }
+  #экран-05 .слова { display: none; }
   #экран-05 .переписка { display: grid; gap: 20px; padding: 28px 32px 8px; }
   #экран-05 .мокап img { width: auto; max-width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; mix-blend-mode: multiply; }
   #экран-05 .переписка img:first-child { justify-self: end; }
@@ -1800,14 +1801,27 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-05.тёмный .счёт li:first-child b { color: color-mix(in srgb, var(--цвет-тёмный-текст) 60%, transparent); }
   @media (max-width: 899px) {
     #экран-05 .история { gap: 16px; }
-    #экран-05 .пара, #экран-05 .доказательство { grid-template-columns: 1fr; gap: 16px; }
+    #экран-05 .пара, #экран-05 .доказательство { grid-template-columns: minmax(0, 1fr); gap: 16px; }
     #экран-05 .счёт { grid-template-rows: none; gap: 16px; order: -1; }
     #экран-05 .роль, #экран-05 .вывод { padding: 24px 20px 26px; }
     #экран-05 .роль b { font-size: var(--кегль-лид); line-height: 1.3; margin-bottom: 8px; }
     #экран-05 .роль p, #экран-05 .вывод p, #экран-05 .счёт span { font-size: var(--кегль-текст); }
     #экран-05 .вывод b { font-size: var(--кегль-текст); }
     #экран-05 .счёт li { padding: 20px 20px 22px; }
-    #экран-05 .переписка { padding: 20px 16px 4px; gap: 16px; overflow-x: auto; }
+    #экран-05 .слова { display: grid; gap: 14px; padding: 20px 16px 4px; }
+    #экран-05 .слова b { display: block; font-size: var(--кегль-мелкий); letter-spacing: .04em; margin-bottom: 6px; }
+    #экран-05 .слова p, #экран-05 .слова li { font-size: var(--кегль-текст); line-height: 1.5; margin-bottom: 0; }
+    #экран-05 .слова ul { margin: 8px 0 0; padding-left: 20px; display: grid; gap: 6px; }
+    #экран-05 .слова__запрос { padding: 14px 16px; border-radius: var(--радиус); }
+    #экран-05.светлый .слова b { color: var(--цвет-текст-тихий); }
+    #экран-05.светлый .слова p, #экран-05.светлый .слова li { color: var(--цвет-текст); }
+    #экран-05.светлый .слова__запрос { background: var(--цвет-фон-2); }
+    #экран-05.тёмный .слова b { color: color-mix(in srgb, var(--цвет-тёмный-текст) 65%, transparent); }
+    #экран-05.тёмный .слова p, #экран-05.тёмный .слова li { color: var(--цвет-тёмный-текст); }
+    #экран-05.тёмный .слова__запрос { background: color-mix(in srgb, var(--цвет-тёмный-текст) 8%, transparent); }
+    #экран-05 .переписка { display: block; margin-top: 16px; padding: 16px 16px 4px; overflow-x: auto; -webkit-overflow-scrolling: touch; border-top: 1px solid var(--цвет-линия); }
+    #экран-05 .переписка img { display: block; }
+    #экран-05 .переписка img + img { margin-top: 16px; }
     #экран-05 .мокап img { max-width: none; }
     #экран-05 .переписка img:first-child { width: 560px; justify-self: start; }
     #экран-05 .переписка img:last-child { width: 800px; }
