@@ -1918,3 +1918,21 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-08 .условие { margin-top: 16px; padding: 20px; }
     #экран-08 .условие b, #экран-08 .условие p { font-size: var(--кегль-текст); }
   }
+
+/* экран 09 */
+#экран-09 { padding-block: 32px; }
+  @media (min-width: 900px) { #экран-09 { padding-block: 48px; } }
+  #экран-09 .блок__внутри { width: min(100% - 2 * var(--отступ-блока), 1320px); }
+  #экран-09 .секция__шапка, #экран-09 .секция__шапка h2 { max-width: none; }
+  #экран-09 .пара { display: grid; grid-template-columns: 1.9fr 1fr; gap: 28px; align-items: stretch; }
+  #экран-09 .вопрос__шапка { font-size: var(--кегль-лид); }
+  #экран-09 .вопрос__тело { font-size: var(--кегль-лид); line-height: 1.55; }
+  #экран-09 .вопрос-карточка { display: grid; align-content: center; justify-items: start; padding: 36px 40px 40px; }
+  #экран-09 .вопрос-карточка b { font-size: var(--кегль-цифра); line-height: 1.2; letter-spacing: -.01em; }
+  #экран-09 .вопрос-карточка p { font-size: var(--кегль-лид); line-height: 1.5; }
+  @media (max-width: 899px) {
+    #экран-09 .пара { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+    #экран-09 .вопрос__шапка, #экран-09 .вопрос__тело, #экран-09 .вопрос-карточка p { font-size: var(--кегль-текст); }
+    #экран-09 .вопрос-карточка { padding: 24px 20px 26px; }
+    #экран-09 .вопрос-карточка b { font-size: var(--кегль-лид); line-height: 1.3; }
+  }
