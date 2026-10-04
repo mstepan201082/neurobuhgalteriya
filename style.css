@@ -1669,7 +1669,9 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 }
 
 /* экран 02 */
-#экран-02 .блок__внутри { width: min(100% - 2 * var(--отступ-блока), 1320px); }
+#экран-02 { margin-top: -64px; padding-top: 36px; }
+  @media (min-width: 900px) { #экран-02 { margin-top: 0; padding-top: 64px; padding-bottom: 72px; } }
+  #экран-02 .блок__внутри { width: min(100% - 2 * var(--отступ-блока), 1320px); }
   #экран-02 .секция__шапка, #экран-02 .секция__шапка h2 { max-width: none; }
   #экран-02 .секция__лид { max-width: 860px; }
   #экран-02 .пара { display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; align-items: stretch; }
@@ -1695,7 +1697,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   }
 
 /* экран 03 */
-#экран-03 .блок__внутри { width: min(100% - 2 * var(--отступ-блока), 1320px); }
+@media (min-width: 900px) { #экран-03 { padding-block: 72px; } }
+  #экран-03 .блок__внутри { width: min(100% - 2 * var(--отступ-блока), 1320px); }
   #экран-03 .секция__шапка, #экран-03 .секция__шапка h2 { max-width: none; }
   #экран-03 .секция__лид { max-width: 860px; }
   #экран-03 .разворот { display: grid; grid-template-columns: 1.7fr 1fr; gap: 28px; align-items: stretch; }
@@ -1727,7 +1730,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   }
 
 /* экран 04 */
-#экран-04 .блок__внутри { width: min(100% - 2 * var(--отступ-блока), 1320px); }
+@media (min-width: 900px) { #экран-04 { padding-block: 72px; } }
+  #экран-04 .блок__внутри { width: min(100% - 2 * var(--отступ-блока), 1320px); }
   #экран-04 .секция__шапка, #экран-04 .секция__шапка h2 { max-width: none; }
   #экран-04 .дорога { list-style: none; margin: 0; padding: 12px 44px; border-radius: var(--радиус-карточки); }
   #экран-04 .дорога li { position: relative; display: grid; grid-template-columns: 44px 1fr 1.25fr; column-gap: 24px; align-items: center; padding: 24px 0; }
