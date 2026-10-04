@@ -1957,3 +1957,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-10 .шаг-к-делу { justify-items: stretch; gap: 16px; padding: 24px 20px 26px; }
     #экран-10 .шаг-к-делу p { font-size: var(--кегль-текст); }
   }
+
+/* экран 11 */
+#экран-11 { padding-block: 32px; }
+  @media (min-width: 900px) { #экран-11 { padding-block: 44px; } }
+  #экран-11 .блок__внутри { width: min(100% - 2 * var(--отступ-блока), 1320px); }
