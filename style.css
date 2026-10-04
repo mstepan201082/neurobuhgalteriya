@@ -1783,9 +1783,16 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-05 .счёт span { display: block; font-size: var(--кегль-лид); line-height: 1.45; }
   #экран-05 .доказательство { display: grid; grid-template-columns: 1.9fr 1fr; gap: 28px; align-items: stretch; }
   #экран-05 .мокап { min-width: 0; border-radius: var(--радиус-карточки); box-shadow: var(--тень); }
-  #экран-05 .переписка { display: grid; gap: 20px; padding: 28px 32px 8px; }
+  #экран-05 .мокап { display: grid; grid-template-rows: 1fr auto auto; }
+  #экран-05 .переписка { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  #экран-05 .переписка::-webkit-scrollbar { display: none; }
+  #экран-05 .кадр { flex: 0 0 100%; scroll-snap-align: start; display: grid; place-items: center; padding: 28px 32px 12px; }
+  #экран-05 .пульт { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 4px 32px 2px; }
+  #экран-05 .стрелка { font: inherit; min-height: 44px; padding: 0 18px; border-radius: 9em; font-weight: 700; font-size: var(--кегль-текст); line-height: 1; cursor: pointer; }
+  #экран-05.светлый .стрелка { background: var(--цвет-фон-карточки); color: var(--цвет-акцент); border: 1px solid var(--цвет-линия); }
+  #экран-05.светлый .стрелка:hover { border-color: var(--цвет-акцент-яркий); }
+  #экран-05.тёмный .стрелка { background: transparent; color: var(--цвет-тёмный-текст); border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 30%, transparent); }
   #экран-05 .мокап img { width: auto; max-width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; mix-blend-mode: multiply; }
-  #экран-05 .переписка img:first-child { justify-self: end; }
   #экран-05 .мокап figcaption { padding: 12px 32px 22px; font-size: var(--кегль-мелкий); }
   #экран-05 .вывод { display: grid; gap: 8px; padding: 30px 44px 32px; }
   #экран-05 .вывод b { font-size: var(--кегль-лид); line-height: 1.45; margin-bottom: 0; }
@@ -1807,11 +1814,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-05 .роль p, #экран-05 .вывод p, #экран-05 .счёт span { font-size: var(--кегль-текст); }
     #экран-05 .вывод b { font-size: var(--кегль-текст); }
     #экран-05 .счёт li { padding: 20px 20px 22px; }
-    #экран-05 .переписка { display: block; padding: 20px 16px 4px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-    #экран-05 .переписка img { display: block; }
-    #экран-05 .переписка img + img { margin-top: 16px; }
-    #экран-05 .мокап img { max-width: none; }
-    #экран-05 .переписка img:first-child { width: 560px; justify-self: start; }
-    #экран-05 .переписка img:last-child { width: 800px; }
+    #экран-05 .кадр { padding: 18px 12px 6px; }
+    #экран-05 .пульт { padding: 4px 12px 2px; }
     #экран-05 .мокап figcaption { padding: 10px 16px 18px; }
   }

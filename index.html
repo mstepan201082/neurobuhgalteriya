@@ -214,8 +214,12 @@
     <div class="доказательство">
       <figure class="мокап">
         <div class="переписка">
-          <img src="img/skrin-zapros.webp" width="672" height="246" alt="Скриншот запроса к ChatGPT: отрывок требования налогового органа представить пояснения по убытку, без шапки и реквизитов" loading="lazy" decoding="async">
-          <img src="img/skrin-otvet.webp" width="948" height="187" alt="Скриншот ответа ChatGPT: что повлияло на финансовый результат — рост расходов на товары, материалы и услуги, рост операционных расходов, изменение рыночной конъюнктуры, поддержание и развитие деятельности" loading="lazy" decoding="async">
+          <div class="кадр"><img src="img/skrin-zapros.webp" width="672" height="246" alt="Скриншот запроса к ChatGPT: отрывок требования налогового органа представить пояснения по убытку, без шапки и реквизитов" loading="lazy" decoding="async"></div>
+          <div class="кадр"><img src="img/skrin-otvet.webp" width="948" height="187" alt="Скриншот ответа ChatGPT: что повлияло на финансовый результат — рост расходов на товары, материалы и услуги, рост операционных расходов, изменение рыночной конъюнктуры, поддержание и развитие деятельности" loading="lazy" decoding="async"></div>
+        </div>
+        <div class="пульт">
+          <button type="button" class="стрелка" onclick="this.closest('figure').querySelector('.переписка').scrollTo({left: 0})">‹ Запрос</button>
+          <button type="button" class="стрелка" onclick="var л = this.closest('figure').querySelector('.переписка'); л.scrollTo({left: л.scrollWidth})">Ответ ИИ ›</button>
         </div>
         <figcaption>Скриншот моей переписки с ChatGPT, обезличено</figcaption>
       </figure>
