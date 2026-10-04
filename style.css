@@ -1818,3 +1818,30 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-05 .пульт { padding: 4px 12px 2px; }
     #экран-05 .мокап figcaption { padding: 10px 16px 18px; }
   }
+
+/* экран 06 */
+#экран-06 { padding-block: 32px; }
+  @media (min-width: 900px) { #экран-06 { padding-block: 48px; } }
+  #экран-06 .блок__внутри { width: min(100% - 2 * var(--отступ-блока), 1320px); }
+  #экран-06 .секция__шапка, #экран-06 .секция__шапка h2 { max-width: none; }
+  #экран-06 .секция__лид { max-width: none; }
+  #экран-06 .места { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  #экран-06 .места li { position: relative; padding: 36px 44px 40px 92px; border-radius: var(--радиус-карточки); }
+  #экран-06 .места li::before { content: "—"; position: absolute; left: 44px; top: 34px; font-weight: 700; font-size: var(--кегль-цифра); line-height: 1.2; }
+  #экран-06 .места b { display: block; font-weight: 700; font-size: var(--кегль-цифра); line-height: 1.2; letter-spacing: -.01em; margin-bottom: 12px; }
+  #экран-06 .места p { font-size: var(--кегль-лид); line-height: 1.5; margin-bottom: 0; }
+  #экран-06.светлый .места li { background: var(--цвет-фон-карточки); border: 1px solid var(--цвет-линия); box-shadow: var(--тень); }
+  #экран-06.светлый .места li::before { color: var(--цвет-тёплый); }
+  #экран-06.светлый .места b { color: var(--цвет-акцент); }
+  #экран-06.светлый .места p { color: var(--цвет-текст-мягкий); }
+  #экран-06.тёмный .места li { background: color-mix(in srgb, var(--цвет-тёмный-текст) 6%, transparent); border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 14%, transparent); }
+  #экран-06.тёмный .места li::before { color: var(--цвет-тёплый); }
+  #экран-06.тёмный .места b { color: var(--цвет-тёмный-текст); }
+  #экран-06.тёмный .места p { color: color-mix(in srgb, var(--цвет-тёмный-текст) 78%, transparent); }
+  @media (max-width: 899px) {
+    #экран-06 .места { grid-template-columns: 1fr; gap: 16px; }
+    #экран-06 .места li { padding: 22px 20px 24px 52px; }
+    #экран-06 .места li::before { left: 20px; top: 21px; font-size: var(--кегль-лид); line-height: 1.3; }
+    #экран-06 .места b { font-size: var(--кегль-лид); line-height: 1.3; margin-bottom: 8px; }
+    #экран-06 .места p { font-size: var(--кегль-текст); }
+  }
