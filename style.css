@@ -1725,3 +1725,37 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-03 .итог b { font-size: var(--кегль-лид); line-height: 1.3; }
     #экран-03 .итог p { font-size: var(--кегль-текст); }
   }
+
+/* экран 04 */
+#экран-04 .блок__внутри { width: min(100% - 2 * var(--отступ-блока), 1320px); }
+  #экран-04 .секция__шапка, #экран-04 .секция__шапка h2 { max-width: none; }
+  #экран-04 .дорога { list-style: none; margin: 0; padding: 12px 44px; border-radius: var(--радиус-карточки); }
+  #экран-04 .дорога li { position: relative; display: grid; grid-template-columns: 44px 1fr 1.25fr; column-gap: 24px; align-items: center; padding: 24px 0; }
+  #экран-04 .дорога li + li { border-top: 1px solid var(--цвет-линия); }
+  #экран-04 .дорога li:not(:last-child)::after { content: ""; position: absolute; left: 21px; top: calc(50% + 22px); height: calc(100% - 44px); width: var(--нить); }
+  #экран-04 .кружок { position: relative; z-index: 1; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; font-weight: 700; font-size: var(--кегль-лид); line-height: 1; }
+  #экран-04 .дорога b { font-weight: 700; font-size: var(--кегль-лид); line-height: 1.35; }
+  #экран-04 .дорога p { font-size: var(--кегль-лид); line-height: 1.5; margin-bottom: 0; }
+  #экран-04 .врезка { margin-top: 20px; padding: 24px 44px; }
+  #экран-04 .врезка b { font-size: var(--кегль-цифра); line-height: 1.2; letter-spacing: -.01em; }
+  #экран-04.светлый .дорога { background: var(--цвет-фон-карточки); border: 1px solid var(--цвет-линия); box-shadow: var(--тень); }
+  #экран-04.светлый .кружок { background: var(--цвет-акцент); color: var(--цвет-на-акценте); }
+  #экран-04.светлый .дорога li:not(:last-child)::after { background: var(--цвет-тёплый); }
+  #экран-04.светлый .дорога b { color: var(--цвет-акцент); }
+  #экран-04.светлый .дорога p { color: var(--цвет-текст-мягкий); }
+  #экран-04.тёмный .дорога { background: color-mix(in srgb, var(--цвет-тёмный-текст) 6%, transparent); border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 14%, transparent); }
+  #экран-04.тёмный .дорога li + li { border-top-color: color-mix(in srgb, var(--цвет-тёмный-текст) 16%, transparent); }
+  #экран-04.тёмный .кружок { background: var(--цвет-тёплый); color: var(--цвет-тёмный-фон); }
+  #экран-04.тёмный .дорога li:not(:last-child)::after { background: color-mix(in srgb, var(--цвет-тёплый) 55%, transparent); }
+  #экран-04.тёмный .дорога b { color: var(--цвет-тёмный-текст); }
+  #экран-04.тёмный .дорога p { color: color-mix(in srgb, var(--цвет-тёмный-текст) 78%, transparent); }
+  @media (max-width: 899px) {
+    #экран-04 .дорога { padding: 6px 20px; }
+    #экран-04 .дорога li { grid-template-columns: 36px 1fr; column-gap: 16px; row-gap: 4px; align-items: start; padding: 20px 0; }
+    #экран-04 .дорога li:not(:last-child)::after { left: 17px; top: 56px; height: calc(100% - 36px); }
+    #экран-04 .кружок { width: 36px; height: 36px; font-size: var(--кегль-текст); grid-row: span 2; }
+    #экран-04 .дорога b { padding-top: 5px; }
+    #экран-04 .дорога p { grid-column: 2; font-size: var(--кегль-текст); }
+    #экран-04 .врезка { padding: 20px; margin-top: 16px; }
+    #экран-04 .врезка b { font-size: var(--кегль-лид); }
+  }
