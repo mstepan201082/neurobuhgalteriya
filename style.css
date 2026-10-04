@@ -1936,3 +1936,24 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-09 .вопрос-карточка { padding: 24px 20px 26px; }
     #экран-09 .вопрос-карточка b { font-size: var(--кегль-лид); line-height: 1.3; }
   }
+
+/* экран 10 */
+#экран-10 { padding-block: 44px; }
+  @media (min-width: 900px) { #экран-10 { padding-block: 72px; min-height: 0; } }
+  #экран-10 .блок__внутри { width: min(100% - 2 * var(--отступ-блока), 1320px); }
+  #экран-10 .призыв { display: grid; grid-template-columns: 1.25fr 1fr; gap: 56px; align-items: center; }
+  #экран-10 .секция__шапка, #экран-10 .секция__шапка h2 { max-width: none; margin-bottom: 0; }
+  #экран-10 .шаг-к-делу { display: grid; justify-items: start; gap: 20px; padding: 36px 40px 38px; border-radius: var(--радиус-карточки); }
+  #экран-10 .шаг-к-делу p { font-size: var(--кегль-лид); line-height: 1.55; margin-bottom: 0; }
+  #экран-10 .шаг-к-делу .условие-шага { font-size: var(--кегль-мелкий); line-height: 1.5; }
+  #экран-10.тёмный .шаг-к-делу { background: color-mix(in srgb, var(--цвет-тёмный-текст) 7%, transparent); border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 16%, transparent); }
+  #экран-10.тёмный .шаг-к-делу p { color: color-mix(in srgb, var(--цвет-тёмный-текст) 88%, transparent); }
+  #экран-10.тёмный .шаг-к-делу .условие-шага { color: color-mix(in srgb, var(--цвет-тёмный-текст) 72%, transparent); }
+  #экран-10.светлый .шаг-к-делу { background: var(--цвет-фон-карточки); border: 1px solid var(--цвет-линия); box-shadow: var(--тень); }
+  #экран-10.светлый .шаг-к-делу p { color: var(--цвет-текст); }
+  #экран-10.светлый .шаг-к-делу .условие-шага { color: var(--цвет-текст-мягкий); }
+  @media (max-width: 899px) {
+    #экран-10 .призыв { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+    #экран-10 .шаг-к-делу { justify-items: stretch; gap: 16px; padding: 24px 20px 26px; }
+    #экран-10 .шаг-к-делу p { font-size: var(--кегль-текст); }
+  }
