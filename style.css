@@ -1799,6 +1799,12 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-05.тёмный .стрелка--тут { background: var(--цвет-тёплый); color: var(--цвет-тёмный-фон); border-color: var(--цвет-тёплый); }
   #экран-05.тёмный .стрелка { background: transparent; color: var(--цвет-тёмный-текст); border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 30%, transparent); }
   #экран-05 .мокап img { width: auto; max-width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; mix-blend-mode: multiply; }
+  @media (min-width: 900px) {
+    #экран-05 .мокап img { width: 100%; }
+    #экран-05 .кадр { padding: 32px 32px 16px; }
+  }
+  #экран-05 .кадр:first-child img { aspect-ratio: 672 / 246; }
+  #экран-05 .кадр:last-child img { aspect-ratio: 948 / 187; }
   #экран-05 .мокап figcaption { padding: 12px 32px 22px; font-size: var(--кегль-мелкий); }
   #экран-05 .вывод { display: grid; gap: 8px; padding: 30px 44px 32px; }
   #экран-05 .вывод b { font-size: var(--кегль-лид); line-height: 1.45; margin-bottom: 0; }
