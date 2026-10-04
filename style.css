@@ -1693,3 +1693,35 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-02 .роль p { font-size: var(--кегль-текст); }
     #экран-02 .роль b { font-size: var(--кегль-лид); line-height: 1.3; margin-bottom: 8px; }
   }
+
+/* экран 03 */
+#экран-03 .блок__внутри { width: min(100% - 2 * var(--отступ-блока), 1320px); }
+  #экран-03 .секция__шапка, #экран-03 .секция__шапка h2 { max-width: none; }
+  #экран-03 .секция__лид { max-width: 860px; }
+  #экран-03 .разворот { display: grid; grid-template-columns: 1.7fr 1fr; gap: 28px; align-items: stretch; }
+  #экран-03 .вещи { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; align-content: start; }
+  #экран-03 .вещи li { position: relative; padding: 22px 0 22px 44px; border-top: 1px solid var(--цвет-линия); font-size: var(--кегль-лид); line-height: 1.5; }
+  #экран-03 .вещи li::before { content: ""; position: absolute; left: 0; top: 23px; width: 28px; height: 28px; border-radius: 50%; }
+  #экран-03 .вещи li::after { content: ""; position: absolute; left: 10px; top: 30px; width: 7px; height: 12px; border-style: solid; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+  #экран-03 .вещи b { font-weight: 700; }
+  #экран-03 .итог { display: grid; align-content: center; gap: 14px; padding: 40px 44px 44px; }
+  #экран-03 .итог b { font-size: var(--кегль-цифра); line-height: 1.2; letter-spacing: -.01em; margin-bottom: 0; }
+  #экран-03 .итог p { font-size: var(--кегль-лид); line-height: 1.5; }
+  #экран-03.светлый .вещи li { color: var(--цвет-текст-мягкий); }
+  #экран-03.светлый .вещи b { color: var(--цвет-акцент); }
+  #экран-03.светлый .вещи li::before { background: var(--цвет-акцент); }
+  #экран-03.светлый .вещи li::after { border-color: var(--цвет-на-акценте); }
+  #экран-03.тёмный .вещи li { color: color-mix(in srgb, var(--цвет-тёмный-текст) 80%, transparent); border-top-color: color-mix(in srgb, var(--цвет-тёмный-текст) 18%, transparent); }
+  #экран-03.тёмный .вещи b { color: var(--цвет-тёмный-текст); }
+  #экран-03.тёмный .вещи li::before { background: var(--цвет-тёплый); }
+  #экран-03.тёмный .вещи li::after { border-color: var(--цвет-тёмный-фон); }
+  @media (max-width: 899px) {
+    #экран-03 .разворот { grid-template-columns: 1fr; gap: 20px; }
+    #экран-03 .вещи { grid-template-columns: 1fr; }
+    #экран-03 .вещи li { padding: 18px 0 18px 42px; font-size: var(--кегль-текст); }
+    #экран-03 .вещи li::before { top: 18px; }
+    #экран-03 .вещи li::after { top: 25px; }
+    #экран-03 .итог { padding: 24px 20px 26px; }
+    #экран-03 .итог b { font-size: var(--кегль-лид); line-height: 1.3; }
+    #экран-03 .итог p { font-size: var(--кегль-текст); }
+  }
