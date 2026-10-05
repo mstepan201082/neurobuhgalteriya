@@ -1704,13 +1704,16 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-03.светлый { background: var(--цвет-фон); }
   #экран-03 .секция__шапка, #экран-03 .секция__шапка h2 { max-width: none; }
   #экран-03 .секция__лид { max-width: 860px; }
-  #экран-03 .разворот { display: grid; grid-template-columns: 1.7fr 1fr; gap: 28px; align-items: stretch; }
+  #экран-03 .разворот { display: grid; grid-template-columns: 1.35fr 1fr; gap: 28px; align-items: stretch; }
+  #экран-03 .лево { display: grid; gap: 24px; align-content: start; }
+  #экран-03 .кадр-стол { min-height: 100%; }
+  #экран-03 .кадр-стол img { height: 100%; aspect-ratio: auto; object-position: 60% 50%; }
   #экран-03 .вещи { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; align-content: start; }
   #экран-03 .вещи li { position: relative; padding: 22px 0 22px 44px; border-top: 1px solid var(--цвет-линия); font-size: var(--кегль-лид); line-height: 1.5; }
   #экран-03 .вещи li::before { content: ""; position: absolute; left: 0; top: 23px; width: 28px; height: 28px; border-radius: 50%; }
   #экран-03 .вещи li::after { content: ""; position: absolute; left: 10px; top: 30px; width: 7px; height: 12px; border-style: solid; border-width: 0 2px 2px 0; transform: rotate(45deg); }
   #экран-03 .вещи b { font-weight: 700; }
-  #экран-03 .итог { display: grid; align-content: center; gap: 14px; padding: 40px 44px 44px; }
+  #экран-03 .итог { display: grid; align-content: center; gap: 10px; padding: 28px 32px 30px; }
   #экран-03 .итог b { font-size: var(--кегль-цифра); line-height: 1.2; letter-spacing: -.01em; margin-bottom: 0; }
   #экран-03 .итог p { font-size: var(--кегль-лид); line-height: 1.5; }
   #экран-03.светлый .вещи li { color: var(--цвет-текст-мягкий); }
@@ -1723,6 +1726,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-03.тёмный .вещи li::after { border-color: var(--цвет-тёмный-фон); }
   @media (max-width: 899px) {
     #экран-03 .разворот { grid-template-columns: 1fr; gap: 20px; }
+    #экран-03 .лево { gap: 20px; }
+    #экран-03 .кадр-стол { order: -1; min-height: 0; aspect-ratio: 3 / 2; }
     #экран-03 .вещи { grid-template-columns: 1fr; }
     #экран-03 .вещи li { padding: 18px 0 18px 42px; font-size: var(--кегль-текст); }
     #экран-03 .вещи li::before { top: 18px; }
