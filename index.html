@@ -12,7 +12,8 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;600;700&display=swap"></noscript>
 <link rel="stylesheet" href="style.css">
 <style>
 :root {
@@ -44,6 +45,7 @@
 }
 @media (min-width: 900px) {
   :root { --кегль-h1: clamp(44px, 4vw, 58px); }
+  .первый-экран--разворот .блок__внутри { min-height: calc(100vh - 3.5rem - var(--отступ-секции) * .7); }
 }
 :root, .светлый { --цвет-кнопки: #1B2A4A; --цвет-на-кнопке: #F7F5F1; --цвет-кнопки-навёл: var(--цвет-акцент-тёмный); }
 .тёмный { --цвет-кнопки: #C9B79C; --цвет-на-кнопке: #2B2E33; --цвет-кнопки-навёл: #D7CAB6; }
@@ -86,6 +88,10 @@
   применить();
 
   if (document.fonts && document.fonts.ready) { document.fonts.ready.then(применить); }
+
+  if (document.fonts && document.fonts.addEventListener) {
+    document.fonts.addEventListener("loadingdone", function () { ждём = ждём || requestAnimationFrame(применить); });
+  }
 
   addEventListener("resize", function () { ждём = ждём || requestAnimationFrame(применить); });
 })();
